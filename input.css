@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #10131a; color: #e0e2ec; font-family: var(--font-body); }
+.font-display { font-family: var(--font-display); }
+* { box-sizing: border-box; }

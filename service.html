@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - A&Y Consolidated</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        surface: '#0E1117',
+                        'surface-card': '#161B22',
+                        'surface-container': '#12161F',
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA820A',
+                            muted: 'rgba(212, 175, 55, 0.15)',
+                            border: 'rgba(212, 175, 55, 0.25)'
+                        },
+                        'on-surface': '#FFFFFF',
+                        'on-surface-variant': '#94A3B8'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0E1117;
+            color: #FFFFFF;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .gold-glow-border {
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(212, 175, 55, 0.03);
+        }
+
+        .gold-glow-border:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 10px 30px -2px rgba(212, 175, 55, 0.12), inset 0 0 18px rgba(212, 175, 55, 0.05);
+        }
+
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA820A 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #mobile-menu {
+            transition: max-height 0.35s ease, opacity 0.25s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #mobile-menu.open {
+            max-height: 480px;
+            opacity: 1;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid #D4AF37;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition-duration: 0.001ms !important;
+                animation-duration: 0.001ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#10131a] text-[#e0e2ec] antialiased">
+    <!-- HEADER -->
+    <header
+        class="fixed left-0 right-0 top-0 z-50 h-[73px] border-b border-[rgba(233,195,73,0.25)] bg-[rgba(16,19,26,0.60)] px-6 py-4 backdrop-blur-[6px] lg:px-16">
+        <div class="mx-auto flex h-full max-w-[1280px] items-center justify-between">
+            <a href="#home" class="flex items-center gap-4">
+                <div class="h-10 w-10 overflow-hidden rounded-xl bg-[#0b0e15]">
+                    <img src="https://www.figma.com/api/mcp/asset/4c30c0ab-fe3d-4ae3-bee8-e5f401a68cba.png"
+                        alt="A&Y Consolidated" class="h-full w-full object-cover">
+                </div>
+                <span class="font-display text-2xl font-bold tracking-[-0.05em]">A&Y CONSOLIDATED</span>
+            </a>
+
+            <nav class="hidden items-center gap-8 lg:flex">
+                <a href="#home" class="relative text-[12px] font-bold tracking-[1.8px] text-[#e9c349]">Home<span
+                        class="absolute -bottom-2 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-[#e9c349]"></span></a>
+                <a href="#about"
+                    class="text-[12px] font-bold tracking-[1.8px] text-[#c6c6cb] transition hover:text-[#e9c349]">About
+                    Us</a>
+                <a href="#residences"
+                    class="text-[12px] font-bold tracking-[1.8px] text-[#c6c6cb] transition hover:text-[#e9c349]">Residences</a>
+                <a href="#investment"
+                    class="text-[12px] font-bold tracking-[1.8px] text-[#c6c6cb] transition hover:text-[#e9c349]">Investment</a>
+                <a href="#testimonials"
+                    class="text-[12px] font-bold tracking-[1.8px] text-[#c6c6cb] transition hover:text-[#e9c349]">Testimonials</a>
+                <a href="#faq"
+                    class="text-[12px] font-bold tracking-[1.8px] text-[#c6c6cb] transition hover:text-[#e9c349]">FAQ</a>
+                <a href="#contact"
+                    class="text-[12px] font-bold tracking-[1.8px] text-[#c6c6cb] transition hover:text-[#e9c349]">Contact</a>
+                <a href="#services"
+                    class="text-[12px] font-bold tracking-[1.8px] text-[#c6c6cb] transition hover:text-[#e9c349]">Services</a>
+                <a href="#blog"
+                    class="text-[12px] font-bold tracking-[1.8px] text-[#c6c6cb] transition hover:text-[#e9c349]">Blog</a>
+            </nav>
+
+            <a href="#footer"
+                class="rounded-xl bg-[#e9c349] px-6 py-2 text-[12px] font-bold tracking-[1.8px] text-[#3c2f00]">Enquire
+                Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-14 sm:pt-20 pb-14 sm:pb-16 overflow-hidden border-b border-white/5">
+        <div class="absolute inset-0 pointer-events-none">
+            <div
+                class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-b from-gold/10 via-transparent to-transparent blur-3xl opacity-50">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+            <!-- Eyebrow Pill -->
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold-border/60 text-gold text-[11px] sm:text-xs font-semibold tracking-widest uppercase mb-6">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+                End-To-End Development Mastery
+            </div>
+
+            <h1
+                class="font-serif text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 max-w-4xl mx-auto leading-tight">
+                Comprehensive Solutions from <span class="text-gold-gradient">Concept to Legacy</span>
+            </h1>
+
+            <p
+                class="text-on-surface-variant text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 font-normal leading-relaxed">
+                We orchestrate luxury property development with uncompromising rigor. From unencumbered deed procurement
+                to turnkey interior delivery and diaspora asset care.
+            </p>
+
+            <!-- Key Metric Highlights Strip -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                <div
+                    class="bg-surface-card/60 backdrop-blur-sm border border-gold-border/30 rounded-xl p-5 text-center">
+                    <div class="font-serif text-2xl md:text-3xl font-bold text-gold mb-1">100% Clear</div>
+                    <div class="text-xs uppercase tracking-wider text-on-surface-variant font-medium">Deed &amp; Title
+                        Verification</div>
+                </div>
+                <div
+                    class="bg-surface-card/60 backdrop-blur-sm border border-gold-border/30 rounded-xl p-5 text-center">
+                    <div class="font-serif text-2xl md:text-3xl font-bold text-gold mb-1">Zero Debt</div>
+                    <div class="text-xs uppercase tracking-wider text-on-surface-variant font-medium">Unmortgaged
+                        Project Lands</div>
+                </div>
+                <div
+                    class="bg-surface-card/60 backdrop-blur-sm border border-gold-border/30 rounded-xl p-5 text-center">
+                    <div class="font-serif text-2xl md:text-3xl font-bold text-gold mb-1">Turnkey Care</div>
+                    <div class="text-xs uppercase tracking-wider text-on-surface-variant font-medium">Dedicated Overseas
+                        Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Service Visual Banner -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+        <div class="relative rounded-2xl overflow-hidden gold-glow-border group">
+            <img src="asset/high_end_architectural_engineering_and_luxury_real_estate_construction_site_at.png"
+                alt="High-rise luxury condominium tower under construction at dusk, cranes overhead and city skyline behind"
+                class="w-full h-[300px] sm:h-[380px] md:h-[460px] object-cover filter brightness-[0.8] contrast-[1.05] group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0E1117] via-[#0E1117]/50 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 p-6 sm:p-8 md:p-12 max-w-3xl">
+                <span class="text-xs uppercase font-semibold tracking-widest text-gold mb-2 block">Prime Engineering
+                    Standard</span>
+                <h2 class="font-serif text-xl sm:text-2xl md:text-4xl font-bold text-white mb-3">Institutional Precision
+                    &amp; Timely Handover</h2>
+                <p class="text-sm md:text-base text-gray-300 leading-relaxed font-normal">
+                    Every project is built on our own unmortgaged prime land, audited by independent structural
+                    engineers and delivered with full legal compliance from Colombo's Municipal Council and Central
+                    Environmental Authority.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services 6-Card Grid -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <div class="text-xs font-semibold tracking-widest text-gold uppercase mb-3">Our Core Pillars</div>
+            <h2 class="font-serif text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight">Structured
+                Development Services</h2>
+            <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+            <!-- Service 1 -->
+            <div
+                class="bg-surface-card/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 gold-glow-border flex flex-col justify-between transition-all duration-300">
+                <div>
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gold/10 border border-gold-border flex items-center justify-center text-gold mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-semibold tracking-widest text-gold uppercase mb-2 block">Pillar
+                        01</span>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-3">Architectural &amp; Structural
+                        Engineering</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 font-normal">
+                        Boutique condominium master-planning adhering strictly to seismic safety, grade-40 concrete
+                        mixes, and premium soundproofing between residential floors.
+                    </p>
+                    <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-4">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Two units per floor privacy designs
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Dual-layer acoustic wall insulation
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Comprehensive MEP &amp; automated generator backup
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div
+                class="bg-surface-card/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 gold-glow-border flex flex-col justify-between transition-all duration-300">
+                <div>
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gold/10 border border-gold-border flex items-center justify-center text-gold mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-semibold tracking-widest text-gold uppercase mb-2 block">Pillar
+                        02</span>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-3">Legal &amp; Title Verification
+                        Guarantee</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 font-normal">
+                        Independent due diligence audits verifying unencumbered land registry titles, CMA approvals, and
+                        zero financial liens prior to pre-sale launch.
+                    </p>
+                    <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-4">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Condominium Management Authority (CMA) certified
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            100% debt-free project land documentation
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Transparent stage payment escrow milestones
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div
+                class="bg-surface-card/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 gold-glow-border flex flex-col justify-between transition-all duration-300">
+                <div>
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gold/10 border border-gold-border flex items-center justify-center text-gold mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-semibold tracking-widest text-gold uppercase mb-2 block">Pillar
+                        03</span>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-3">Diaspora Inward Investment
+                        Advisory</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 font-normal">
+                        Specialized guidance for overseas buyers in the UK, Australia, UAE, and North America to
+                        navigate Central Bank Inward Investment Accounts (IIA).
+                    </p>
+                    <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-4">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Direct IIA foreign currency remittance routing
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Weekly photographic construction milestones
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Remote power-of-attorney execution support
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div
+                class="bg-surface-card/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 gold-glow-border flex flex-col justify-between transition-all duration-300">
+                <div>
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gold/10 border border-gold-border flex items-center justify-center text-gold mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-semibold tracking-widest text-gold uppercase mb-2 block">Pillar
+                        04</span>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-3">Custom Interior Bespoke
+                        Tailoring</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 font-normal">
+                        Personalized spatial layouts during early structural stages, providing curated teak millwork,
+                        European sanitaryware, and smart automation.
+                    </p>
+                    <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-4">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Early-stage internal partition adjustments
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Custom pantry and solid timber fitting upgrades
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Integrated smart home climate and security
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div
+                class="bg-surface-card/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 gold-glow-border flex flex-col justify-between transition-all duration-300">
+                <div>
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gold/10 border border-gold-border flex items-center justify-center text-gold mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-semibold tracking-widest text-gold uppercase mb-2 block">Pillar
+                        05</span>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-3">Asset Management &amp; Leasing
+                        Concierge</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 font-normal">
+                        Turnkey tenant onboarding, expatriate executive leasing, and routine property preservation
+                        ensuring consistent ~7% net yields for investors.
+                    </p>
+                    <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-4">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Corporate &amp; embassy tenant vetting
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Full maintenance and preventive facility audits
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Automated dividend &amp; rental remittance reports
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div
+                class="bg-surface-card/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 gold-glow-border flex flex-col justify-between transition-all duration-300">
+                <div>
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gold/10 border border-gold-border flex items-center justify-center text-gold mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-semibold tracking-widest text-gold uppercase mb-2 block">Pillar
+                        06</span>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-3">Key Handover &amp; Deed
+                        Registration</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 font-normal">
+                        Formal execution of individual condominium deed of transfer through Colombo District Land
+                        Registry, accompanied by a lifetime warranty booklet.
+                    </p>
+                    <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-4">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Direct Land Registry freehold deed transfer
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Certificate of Conformity (COC) handover
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            12-month structural defect liability guarantee
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Process Timeline Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-16 border-t border-white/5">
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+            <div class="text-xs font-semibold tracking-widest text-gold uppercase mb-3">Flawless Delivery</div>
+            <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white">Our 4-Stage Development
+                Lifecycle</h2>
+            <p class="text-on-surface-variant text-sm mt-3">From site acquisition to resident onboarding, clarity is
+                embedded into every milestone.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6 relative">
+            <!-- Step 1 -->
+            <div class="bg-surface-card/60 border border-white/10 rounded-xl p-6 relative">
+                <div class="text-4xl font-serif font-bold text-gold/30 mb-4">01</div>
+                <h4 class="font-serif text-lg font-bold text-white mb-2">Title Due Diligence</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Title deed scrutiny by leading legal counsel and 100% upfront equity settlement without bank
+                    mortgages.
+                </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-surface-card/60 border border-white/10 rounded-xl p-6 relative">
+                <div class="text-4xl font-serif font-bold text-gold/30 mb-4">02</div>
+                <h4 class="font-serif text-lg font-bold text-white mb-2">Engineering &amp; Sanction</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Full approval from Dehiwala-Mount Lavinia Municipal Council, CMA, Fire Department, and CEB.
+                </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-surface-card/60 border border-white/10 rounded-xl p-6 relative">
+                <div class="text-4xl font-serif font-bold text-gold/30 mb-4">03</div>
+                <h4 class="font-serif text-lg font-bold text-white mb-2">Boutique Construction</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                    High-grade structural pouring with weekly photo updates sent via private client investor portals.
+                </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-surface-card/60 border border-white/10 rounded-xl p-6 relative">
+                <div class="text-4xl font-serif font-bold text-gold/30 mb-4">04</div>
+                <h4 class="font-serif text-lg font-bold text-white mb-2">Deed Handover &amp; Care</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Individual freehold deed registration, COC certificate, and ongoing asset management support.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12 mb-14 sm:mb-16">
+        <div
+            class="bg-gradient-to-r from-surface-card via-[#1A202C] to-surface-card rounded-2xl p-8 sm:p-10 md:p-14 border border-gold-border text-center relative overflow-hidden">
+            <div class="max-w-2xl mx-auto relative z-10">
+                <span class="text-xs uppercase font-semibold tracking-widest text-gold mb-2 block">Direct
+                    Engagement</span>
+                <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Ready to Discuss Your
+                    Residence or Investment?</h2>
+                <p class="text-sm text-on-surface-variant mb-8 leading-relaxed">
+                    Connect with our development directors for private project dossiers, legal verification packs, and
+                    pre-launch pricing.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#"
+                        class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gold hover:bg-[#c49f2c] text-[#0E1117] font-bold text-xs tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                        Schedule Private Consultation
+                    </a>
+                    <a href="#"
+                        class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-transparent hover:bg-white/5 text-white border border-white/20 font-medium text-xs tracking-wider uppercase transition-colors">
+                        Download Legal Dossier
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer"
+        class="mx-auto flex w-full max-w-[1280px] flex-col justify-between gap-12 border-t border-[rgba(69,71,75,0.1)] bg-[#0b0e15] px-6 py-[80px] lg:flex-row lg:px-16 lg:py-[121px]">
+        <div class="w-full max-w-[320px]">
+            <h2 class="font-display text-2xl font-semibold text-[#e0e2ec]">A&Y CONSOLIDATED</h2>
+            <p class="mt-4 text-[14px] leading-[21px] text-[#c6c6cb]">Engineered Luxury. Structural Integrity.
+                Exclusive<br> Boutique Residences.</p>
+        </div>
+
+        <div>
+            <nav class="flex flex-wrap gap-6 opacity-80 sm:gap-8">
+                <a href="#home" class="text-[10px] font-bold tracking-[1.8px] text-[#c6c6cb] sm:text-[12px]">Sitemap</a>
+                <a href="#" class="text-[10px] font-bold tracking-[1.8px] text-[#c6c6cb] sm:text-[12px]">Privacy
+                    Policy</a>
+                <a href="#" class="text-[10px] font-bold tracking-[1.8px] text-[#c6c6cb] sm:text-[12px]">Terms of
+                    Service</a>
+                <a href="#" class="text-[10px] font-bold tracking-[1.8px] text-[#c6c6cb] sm:text-[12px]">Legal
+                    Disclaimers</a>
+            </nav>
+            <p class="mt-8 text-[12px] text-[rgba(198,198,203,0.5)] sm:text-[14px]">© 2024 A&Y CONSOLIDATED (PVT) LTD.
+                ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script>
+            (function () {
+                var toggle = document.getElementById('menu-toggle');
+                var menu = document.getElementById('mobile-menu');
+                var iconOpen = document.getElementById('icon-open');
+                var iconClose = document.getElementById('icon-close');
+
+                toggle.addEventListener('click', function () {
+                    var isOpen = menu.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    iconOpen.classList.toggle('hidden', isOpen);
+                    iconClose.classList.toggle('hidden', !isOpen);
+                });
+
+                menu.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        menu.classList.remove('open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                        iconOpen.classList.remove('hidden');
+                        iconClose.classList.add('hidden');
+                    });
+                });
+            })();
+    </script>
+
+</body>
+
+</html>
